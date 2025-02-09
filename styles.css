@@ -8,19 +8,22 @@
 }
 
 body {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
+  list-style: inherit; /*Arial, sans-serif;*/
 }
 
 .footer {
   background-color: var(--primary-bg);
   color: var(--text-dark);
-  padding: 2rem 1rem;
+  /*padding: 3rem 1.5rem;
+  /*margin: auto;*/
 }
 
 .container {
-  max-width: 1636px; /*1200px;*/
-  margin: 0 auto;
+  width: 100%; /*1200px;*/
+  margin-left: auto;
+  margin-right: auto;
   padding: 3rem 1.5rem;
 }
 
@@ -30,53 +33,46 @@ body {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 .subscribe-section {
   grid-column: span 2;
 }
 
 .subscribe-title {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 1rem;
+  line-height: 2rem;
 }
 
 .subscribe-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 1.5rem;
 }
-
+/* 
 @media (min-width: 640px) {
   .subscribe-form {
     flex-direction: row;
   }
-}
+} */
 
 .subscribe-input {
-  padding: 0.5rem;
-  border: 1px solid var(--text-dark);
-  border-radius: 4px;
-  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #e5e7eb; /*var(--text-dark);*/
+  border-radius: 0.375rem;
+  font-size: 100%;
+  color: var(--text-dark);
+  /*flex: 1;*/
 }
 
 .subscribe-button {
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1.5rem;
   background-color: var(--accent);
   color: var(--text-light);
   border: none;
-  border-radius: 4px;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
   cursor: pointer;
 }
 
@@ -91,7 +87,7 @@ body {
 .links-title {
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #313131;
+  /*color: #313131;*/
 }
 
 .links-list {
@@ -123,5 +119,45 @@ body {
 }
 
 .logo {
-  height: 40px;
+  height: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .subscribe-form {
+    flex-direction: row;
+  }
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .container {
+    max-width: 1024px; /* Large screens (lg) */
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px; /* Extra large screens (xl) */
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px; /* 2XL screens */
+  }
 }
